@@ -1,0 +1,136 @@
+.progress-bar-container {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.progress-bar-header {
+  margin-bottom: 8px;
+}
+
+.progress-bar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.progress-bar-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.progress-bar-value {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1rem;
+  background-color: #f0f4ff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid #d0d7ff;
+}
+
+.progress-bar-description {
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.progress-bar-outer {
+  width: 100%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-inner {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.6s ease;
+}
+
+.progress-bar-inner-text {
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 0 8px;
+}
+
+/* Полосатый стиль */
+.progress-bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+/* Анимация для полосатого стиля */
+.progress-bar-animated {
+  animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* Футер прогресс-бара */
+.progress-bar-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.progress-bar-min,
+.progress-bar-mid,
+.progress-bar-max {
+  flex: 1;
+  text-align: center;
+}
+
+.progress-bar-min {
+  text-align: left;
+}
+
+.progress-bar-max {
+  text-align: right;
+}
+
+/* Варианты цветов */
+.progress-bar-variant-success .progress-bar-inner {
+  background-color: #28a745;
+}
+
+.progress-bar-variant-warning .progress-bar-inner {
+  background-color: #ffc107;
+}
+
+.progress-bar-variant-danger .progress-bar-inner {
+  background-color: #dc3545;
+}
+
+.progress-bar-variant-info .progress-bar-inner {
+  background-color: #17a2b8;
+}
+
+.progress-bar-variant-primary .progress-bar-inner {
+  background-color: #007bff;
+}
