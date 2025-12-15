@@ -1,0 +1,502 @@
+.enhanced-data-manager {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manager-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.manager-header h2 {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Секция экспорта */
+.export-section,
+.import-section {
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.export-section h3,
+.import-section h3 {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Статистика */
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Опции экспорта */
+.export-options {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .export-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.select-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.select-input:focus {
+  outline: none;
+  border-color: #4dabf7;
+  box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.1);
+}
+
+.export-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #495057;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 2px solid #adb5bd;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: all 0.2s;
+}
+
+.checkbox-label:hover .checkmark {
+  border-color: #4dabf7;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #4dabf7;
+  border-color: #4dabf7;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Кнопки экспорта */
+.export-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-export {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #4dabf7 0%, #339af0 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(51, 154, 240, 0.3);
+}
+
+.btn-export:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 154, 240, 0.4);
+}
+
+.btn-export:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #adb5bd;
+}
+
+.btn-template {
+  padding: 14px 28px;
+  background: white;
+  color: #495057;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-template:hover {
+  border-color: #4dabf7;
+  color: #4dabf7;
+}
+
+/* Зона перетаскивания */
+.drop-zone {
+  border: 3px dashed #dee2e6;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: white;
+  margin-bottom: 24px;
+}
+
+.drop-zone:hover,
+.drop-zone.dragging {
+  border-color: #4dabf7;
+  background: #f8fbff;
+}
+
+.drop-zone.dragging {
+  transform: scale(1.01);
+}
+
+.drop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.drop-icon {
+  font-size: 48px;
+  color: #adb5bd;
+  transition: color 0.3s;
+}
+
+.drop-zone:hover .drop-icon,
+.drop-zone.dragging .drop-icon {
+  color: #4dabf7;
+}
+
+.drop-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #495057;
+  margin: 0;
+}
+
+.drop-subtext {
+  font-size: 14px;
+  color: #868e96;
+  margin: 0;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+/* Требования к файлу */
+.import-requirements {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border-left: 4px solid #40c057;
+}
+
+.import-requirements h4 {
+  margin: 0 0 12px 0;
+  color: #2b8a3e;
+}
+
+.import-requirements ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.import-requirements li {
+  padding: 4px 0;
+  color: #495057;
+  position: relative;
+}
+
+.import-requirements li:before {
+  content: "✓";
+  position: absolute;
+  left: -20px;
+  color: #40c057;
+  font-weight: bold;
+}
+
+/* Статус импорта */
+.import-status {
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+}
+
+.import-status.success {
+  background: #ebfbee;
+  border: 1px solid #b2f2bb;
+  color: #2b8a3e;
+}
+
+.import-status.error {
+  background: #fff5f5;
+  border: 1px solid #ffc9c9;
+  color: #c92a2a;
+}
+
+.status-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Список ошибок */
+.import-errors {
+  background: #fff5f5;
+  border: 1px solid #ffc9c9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.import-errors h4 {
+  margin: 0 0 16px 0;
+  color: #c92a2a;
+}
+
+.errors-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.error-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 3px solid #ff6b6b;
+}
+
+.error-badge {
+  background: #ff6b6b;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.error-more {
+  padding: 12px;
+  text-align: center;
+  color: #868e96;
+  font-style: italic;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+/* Информация о совместимости */
+.compatibility-info {
+  background: #e7f5ff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #a5d8ff;
+}
+
+.compatibility-info h4 {
+  margin: 0 0 12px 0;
+  color: #1971c2;
+}
+
+.compatibility-info p {
+  margin: 0 0 16px 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.compatibility-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid #a5d8ff;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1971c2;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.export-section,
+.import-section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(77, 171, 247, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(77, 171, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 171, 247, 0);
+  }
+}
+
+.drop-zone.dragging {
+  animation: pulse 2s infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .enhanced-data-manager {
+    padding: 16px;
+  }
+  
+  .stats-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .export-actions {
+    flex-direction: column;
+  }
+  
+  .btn-export,
+  .btn-template {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .drop-zone {
+    padding: 32px 16px;
+  }
+}

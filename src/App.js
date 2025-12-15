@@ -17,7 +17,9 @@ import TechnologyCard from './components/TechnologyCard';
 import TechnologyNotes from './components/TechnologyNotes';
 import SearchBar from './components/SearchBar';
 import FilterTabs from './components/FilterTabs';
-
+import DeadlineForm from './components/DeadlineForm';
+import BulkStatusEditor from './components/BulkStatusEditor';
+import EnhancedDataExporterImporter from './components/EnhancedDataExporterImporter';
 // Импорт страниц
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
@@ -256,6 +258,7 @@ function AppContent() {
               technologies={technologies}
             />
           } />
+
           {/* Настройки */}
           <Route path="/settings" element={
             <Settings 
